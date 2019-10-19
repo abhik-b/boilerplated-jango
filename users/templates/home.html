@@ -1,0 +1,9 @@
+<h3>hi {{user.username}}<h3>
+
+{% if user.is_authenticated %}
+<h3>hi {{user.username}}<h3>
+<a href="{% url 'account_logout'  %}">logout</a>
+{% else %}
+<a href="{% url 'account_login'  %}">login</a>
+<a href="{% url 'account_signup'  %}">signup</a>
+{% endif %}
