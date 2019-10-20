@@ -138,9 +138,23 @@ AUTHENTICATION_BACKENDS = (
 
 )
 SITE_ID = 1
-EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'
+
+
+EMAIL_BACKEND = 'django.core.mail.backends.console.EmailBackend'  # For DEVELPEMET
+# EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'  # For PRODUCTION
+EMAIL_HOST = 'smtp.host.com'
+EMAIL_USE_TLS = True
+EMAIL_PORT = 587
+EMAIL_HOST_USER = 'your account @host.com'
+EMAIL_HOST_PASSWORD = 'your account password'
+DEFAULT_FROM_EMAIL = "abhik0301@gmail.com"
+EMAIL_USE_TLS = True
+
+
 ACCOUNT_EMAIL_REQUIRED = True
 ACCOUNT_USERNAME_REQUIRED = False
+ACCOUNT_SIGNUP_PASSWORD_ENTER_TWICE = False
+ACCOUNT_SESSION_REMEMBER = True
 ACCOUNT_AUTHENTICATION_METHOD = 'email'
 ACCOUNT_UNIQUE_EMAIL = True
-LOGIN_REDIRECT_URL = 'home'
+ACCOUNT_EMAIL_VERIFICATION = 'mandatory'
